@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Packages — Dive</title>
+
+    <!-- Google Fonts (Poppins, Montserrat, Open Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Swiper.js for Testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="scrolled"> <!-- Start header as scrolled for solid background -->
+        <nav>
+            <a href="index.html" class="logo">DIVE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-extra">
+                <a href="booking.html" class="btn btn-primary nav-book-now">Book Now</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- All Packages Section -->
+        <section id="all-packages" class="content-section visible" style="padding-top: 120px;">
+            <div class="container">
+                <h2 class="section-title">All Our Dive Packages</h2>
+                <p class="section-subtitle">Explore our curated list of the best diving experiences the Philippines has to offer. Find your next adventure below!</p>
+                <div class="destinations-grid">
+                    <!-- Card 1 -->
+                    <div class="destination-card">
+                        <img src="images/sea2.jpg" alt="Cebu, Philippines">
+                        <div class="card-content">
+                            <h3>Cebu, Philippines</h3>
+                            <p>Experience the famous sardine run and swim with gentle whale sharks.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="cebu">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="destination-card">
+                        <img src="images/sea3.jpg" alt="Palawan, Philippines">
+                        <div class="card-content">
+                            <h3>Palawan, Philippines</h3>
+                            <p>Explore the world-renowned Tubbataha Reefs and historic wreck dives.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="palawan">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="destination-card">
+                        <img src="images/sea4.jpg" alt="Anilao, Philippines">
+                        <div class="card-content">
+                            <h3>Anilao, Philippines</h3>
+                            <p>Discover a macro photographer's paradise with incredible biodiversity.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="anilao">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 4 (New) -->
+                    <div class="destination-card">
+                        <img src="images/gallery-4.jpg" alt="Bohol, Philippines">
+                        <div class="card-content">
+                            <h3>Bohol, Philippines</h3>
+                            <p>See the stunning coral walls of Balicasag and find unique critters.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="bohol">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 5 (New) -->
+                    <div class="destination-card">
+                        <img src="images/gallery-1.jpg" alt="Apo Island, Philippines">
+                        <div class="card-content">
+                            <h3>Apo Island, Philippines</h3>
+                            <p>A protected marine sanctuary famous for its sea turtle population.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="apo">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 6 (New) -->
+                    <div class="destination-card">
+                        <img src="images/gallery-6.jpg" alt="Malapascua, Philippines">
+                        <div class="card-content">
+                            <h3>Malapascua, Philippines</h3>
+                            <p>The only place in the world to reliably see thresher sharks.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="malapascua">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggler">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>Dive Assistant</h2>
+            <span class="close-chatbot">&times;</span>
+        </div>
+        <ul class="chat-log">
+            <li class="chat-message bot">
+                <p>Hello! 👋<br>How can I help you today? You can ask about our packages, booking, or our team.</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <input type="text" placeholder="Ask a question..." required>
+            <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">DIVE</a>
+                    <p>Your gateway to the underwater wonders of the Philippines. Join us for an unforgettable adventure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#destinations">Destinations</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Trips</h4>
+                    <ul>
+                        <li><a href="#all-packages">Cebu Diving</a></li>
+                        <li><a href="#all-packages">Palawan Wrecks</a></li>
+                        <li><a href="#all-packages">Anilao Macro</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for the latest deals and dive reports.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Dive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals (Re-used from index.html) -->
+    <div id="destination-modal" class="modal">
+        <div class="modal-content destination-modal-content">
+            <span class="close-button" id="close-destination-modal">&times;</span>
+            <img id="destination-modal-img" src="" alt="Destination Image">
+            <h2 id="destination-modal-title"></h2>
+            <p id="destination-modal-description"></p>
+            <a href="booking.html" id="destination-modal-book-btn" class="btn btn-primary">Book This Trip</a>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

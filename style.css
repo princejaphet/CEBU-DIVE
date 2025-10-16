@@ -1,0 +1,1017 @@
+/* ------------------------- */
+/* --- Table of Contents --- */
+/* ------------------------- */
+/* 
+1.  Root Variables & Global Styles
+2.  Typography & Buttons
+3.  Header & Navigation
+4.  Hero Section
+5.  Content Sections (General)
+6.  About Section
+7.  Destinations Section
+8.  Booking & Contact Forms
+9.  Gallery Section
+10. Testimonials Section
+10.5 Team Section
+11. Contact Section
+12. Footer
+13. Modals (Booking & Lightbox)
+14. Animations & Effects
+15. Dark Mode
+16. Responsive Design
+*/
+
+
+/* 1. Root Variables & Global Styles
+--------------------------------------------- */
+:root {
+    --sky-blue: #00BFFF;
+    --deep-ocean-blue: #003366;
+    --white: #FFFFFF;
+    --coral-accent: #FF7F50;
+    --light-bg: #f8f9fa;
+    --dark-bg: #121212;
+    --light-text: #343a40;
+    --dark-text: #e0e0e0;
+    --card-bg-light: var(--white);
+    --card-bg-dark: #1e1e1e;
+    --border-light: #dee2e6;
+    --border-dark: #333;
+
+    --font-heading: 'Poppins', 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', 'Roboto', sans-serif;
+
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
+    --card-bg: var(--card-bg-light);
+    --border-color: var(--border-light);
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --header-scrolled-bg: var(--white);
+    --header-text: var(--deep-ocean-blue);
+}
+
+body.dark-mode {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --card-bg: var(--card-bg-dark);
+    --border-color: var(--border-dark);
+    --header-bg: rgba(18, 18, 18, 0.8);
+    --header-scrolled-bg: var(--dark-bg);
+    --header-text: var(--sky-blue);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for fixed header */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 2. Typography & Buttons
+--------------------------------------------- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--header-text);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--coral-accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: #ff6347; /* Slightly darker coral */
+}
+
+.btn-secondary {
+    background-color: var(--sky-blue);
+    color: var(--white);
+}
+
+/* 3. Header & Navigation
+--------------------------------------------- */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s;
+    background-color: transparent;
+}
+
+#main-header.scrolled {
+    background-color: var(--header-scrolled-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#main-header.scrolled .logo {
+    color: var(--header-text);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+#main-header.scrolled .nav-links a {
+    color: var(--header-text);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--coral-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-extra {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+#main-header.scrolled .hamburger {
+    color: var(--header-text);
+}
+
+/* 4. Hero Section
+--------------------------------------------- */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.5); /* Deep Ocean Blue overlay */
+    z-index: -1;
+}
+
+.hero-content h1 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* 5. Content Sections (General)
+--------------------------------------------- */
+.content-section {
+    padding: 6rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--deep-ocean-blue);
+}
+
+body.dark-mode .section-title {
+    color: var(--sky-blue);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: #6c757d;
+}
+
+body.dark-mode .section-subtitle {
+    color: #adb5bd;
+}
+
+/* 6. About Section
+--------------------------------------------- */
+.ocean-icons {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.icon-item i {
+    font-size: 3rem;
+    color: var(--sky-blue);
+    margin-bottom: 1rem;
+}
+
+/* 7. Destinations Section
+--------------------------------------------- */
+#destinations {
+    background-color: var(--bg-color);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    margin-bottom: 1.5rem;
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* 8. Booking & Contact Forms
+--------------------------------------------- */
+.booking-form, .contact-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.booking-form {
+    grid-template-columns: 1fr 1fr;
+}
+
+.booking-form .form-group:nth-child(5),
+.booking-form button {
+    grid-column: 1 / -1;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+input[type="date"] {
+    color-scheme: light;
+}
+body.dark-mode input[type="date"] {
+    color-scheme: dark;
+}
+
+/* 9. Gallery Section
+--------------------------------------------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+/* 10. Testimonials Section
+--------------------------------------------- */
+#testimonials {
+    background-color: var(--bg-color);
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.rating .fa-star, .rating .fa-star-half-alt {
+    color: #ffc107;
+}
+
+.testimonial-card h4 {
+    margin-top: 1rem;
+    color: var(--header-text);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--sky-blue) !important;
+}
+
+/* 10.5 Team Section
+--------------------------------------------- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--sky-blue);
+}
+
+.team-member-card .role {
+    color: var(--coral-accent);
+    font-weight: bold;
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* 11. Contact Section
+--------------------------------------------- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info iframe {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: transform 0.3s;
+    display: inline-block; /* Needed for transform to work */
+}
+
+.social-links a:hover {
+    transform: scale(1.15); /* Add a subtle zoom effect on hover */
+}
+
+/* Brand colors */
+.social-links .fa-facebook-f {
+    color: #1877F2; /* Facebook Blue */
+}
+
+.social-links .fa-instagram {
+    color: #E4405F; /* Instagram Pink */
+}
+
+.social-links .fa-youtube {
+    color: #FF0000; /* YouTube Red */
+}
+
+/* 12. Footer
+--------------------------------------------- */
+footer {
+    background-color: var(--deep-ocean-blue);
+    color: var(--white);
+    padding: 5rem 0 2rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col .logo {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--sky-blue);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: var(--sky-blue);
+}
+
+.newsletter-form {
+    position: relative;
+}
+
+.newsletter-form input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--sky-blue);
+    color: var(--white);
+}
+
+.newsletter-form button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: var(--sky-blue);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* 13. Modals (Booking & Lightbox)
+--------------------------------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: zoomIn 0.3s;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: zoomIn 0.3s;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+/* Destination Details Modal */
+.destination-modal-content {
+    text-align: left;
+    padding: 0;
+    max-width: 700px;
+}
+
+#destination-modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+#destination-modal-title,
+#destination-modal-description,
+#destination-modal-book-btn {
+    margin: 1rem 2rem;
+}
+
+#destination-modal-book-btn { display: inline-block; }
+
+/* Chatbot */
+.chatbot-toggler {
+    position: fixed;
+    bottom: 30px;
+    right: 35px;
+    width: 60px;
+    height: 60px;
+    background: var(--sky-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+}
+
+.chatbot-toggler:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.5);
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 35px;
+    width: 380px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform-origin: bottom right;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.chatbot-container.active {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chatbot-header {
+    background: var(--header-scrolled-bg);
+    color: var(--header-text);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chatbot-header h2 {
+    font-size: 1.4rem;
+    color: var(--header-text);
+}
+
+.chatbot-header .close-chatbot {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.chatbot-header .close-chatbot:hover {
+    opacity: 1;
+}
+
+.chat-log {
+    height: 310px;
+    overflow-y: auto;
+    padding: 30px 20px;
+    list-style: none;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.chat-message p {
+    max-width: 75%;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.chat-message.bot p {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 10px 10px 10px 0;
+    border: 1px solid var(--border-color);
+}
+
+.chat-message .bot-icon {
+    font-size: 1.5rem;
+    color: var(--sky-blue);
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message.user p {
+    background: var(--coral-accent);
+    color: var(--white);
+    border-radius: 10px 10px 0 10px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    padding: 10px 0;
+}
+
+.chat-input button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--sky-blue);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.chat-input button:hover {
+    color: var(--coral-accent);
+}
+
+/* 14. Animations & Effects
+--------------------------------------------- */
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content .fade-in:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+/* Parallax Effect (Simple) */
+#about {
+    background-image: url('images/wave-pattern.png');
+    background-attachment: fixed;
+}
+
+/* 15. Dark Mode Toggle
+--------------------------------------------- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+.theme-switch input {
+    display:none;
+}
+.slider {
+    background-color: var(--deep-ocean-blue);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+.slider:before {
+    background-color: var(--white);
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+input:checked + .slider {
+    background-color: var(--sky-blue);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.slider .sun-icon, .slider .moon-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffc107;
+    font-size: 12px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.slider .sun-icon { left: 6px; }
+.slider .moon-icon { right: 6px; opacity: 0; }
+
+input:checked + .slider .sun-icon { opacity: 0; }
+input:checked + .slider .moon-icon { opacity: 1; }
+
+/* 16. Responsive Design
+--------------------------------------------- */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--header-scrolled-bg);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a, #main-header.scrolled .nav-links a {
+        color: var(--header-text);
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-book-now {
+        display: none; /* Hide the book now button on mobile */
+    }
+
+    .content-section {
+        padding: 4rem 0; /* Reduce padding on mobile */
+    }
+
+    .ocean-icons {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .chatbot-container {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+    .booking-form .form-group:nth-child(5) {
+        grid-column: auto;
+    }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team — Dive</title>
+
+    <!-- Google Fonts (Poppins, Montserrat, Open Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="scrolled"> <!-- Start header as scrolled for solid background -->
+        <nav>
+            <a href="index.html" class="logo">DIVE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-extra">
+                <a href="booking.html" class="btn btn-primary nav-book-now">Book Now</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Team Section -->
+        <section id="team" class="content-section visible" style="padding-top: 120px;">
+            <div class="container">
+                <h2 class="section-title">Meet Our Expert Team</h2>
+                <p class="section-subtitle">The passionate, certified, and friendly faces behind every successful dive. We're here to ensure your underwater adventure is safe and unforgettable.</p>
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member-card">
+                        <img src="images/diver1.jpg" alt="Team Member 1">
+                        <h3>Maria Santos</h3>
+                        <p class="role">Lead Instructor & Founder</p>
+                        <p>With over 15 years of diving experience, Maria founded Dive to share her passion for the ocean's wonders.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="team-member-card">
+                        <img src="images/diver2.jpg" alt="Team Member 2">
+                        <h3>Juan Dela Cruz</h3>
+                        <p class="role">Divemaster</p>
+                        <p>Juan knows the local reefs like the back of his hand and is an expert at finding rare marine life.</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="team-member-card">
+                        <img src="images/diver3.jpg" alt="Team Member 3">
+                        <h3>Anna Reyes</h3>
+                        <p class="role">Underwater Photographer</p>
+                        <p>Anna captures the magic of your dive, ensuring you have stunning photos to remember your trip by.</p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="team-member-card">
+                        <img src="images/diver4.jpg" alt="Team Member 4">
+                        <h3>Leo Garcia</h3>
+                        <p class="role">Safety Officer</p>
+                        <p>A certified rescue diver, Leo's top priority is the safety and well-being of every guest on board.</p>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="team-member-card">
+                        <img src="images/diver5.jpg" alt="Team Member 5">
+                        <h3>Sofia Lim</h3>
+                        <p class="role">Customer Relations</p>
+                        <p>Sofia is the friendly voice behind our emails and calls, ready to help you plan your perfect dive trip.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggler">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>Dive Assistant</h2>
+            <span class="close-chatbot">&times;</span>
+        </div>
+        <ul class="chat-log">
+            <li class="chat-message bot">
+                <p>Hello! 👋<br>How can I help you today? You can ask about our packages, booking, or our team.</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <input type="text" placeholder="Ask a question..." required>
+            <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">DIVE</a>
+                    <p>Your gateway to the underwater wonders of the Philippines. Join us for an unforgettable adventure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Trips</h4>
+                    <ul>
+                        <li><a href="packages.html">Cebu Diving</a></li>
+                        <li><a href="packages.html">Palawan Wrecks</a></li>
+                        <li><a href="packages.html">Anilao Macro</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for the latest deals and dive reports.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Dive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

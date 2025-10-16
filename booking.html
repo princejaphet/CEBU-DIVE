@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure — Dive</title>
+
+    <!-- Google Fonts (Poppins, Montserrat, Open Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="scrolled"> <!-- Start header as scrolled for solid background -->
+        <nav>
+            <a href="index.html" class="logo">DIVE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-extra">
+                <a href="booking.html" class="btn btn-primary nav-book-now">Book Now</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Booking Section -->
+        <section id="booking" class="content-section visible" style="padding-top: 120px;">
+            <div class="container">
+                <h2 class="section-title">Plan Your Adventure</h2>
+                <p class="section-subtitle">Fill out the form below to start your booking process. We'll get back to you within 24 hours to confirm the details.</p>
+                <form id="booking-form" class="booking-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="location" name="location" required>
+                            <option value="" disabled selected>Choose a Destination</option>
+                            <option value="cebu">Cebu</option>
+                            <option value="palawan">Palawan</option>
+                            <option value="anilao">Anilao</option>
+                            <option value="bohol">Bohol</option>
+                            <option value="apo">Apo Island</option>
+                            <option value="malapascua">Malapascua</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="people" name="people" min="1" max="10" required placeholder="Number of People">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Booking</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggler">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>Dive Assistant</h2>
+            <span class="close-chatbot">&times;</span>
+        </div>
+        <ul class="chat-log">
+            <li class="chat-message bot">
+                <p>Hello! 👋<br>How can I help you today? You can ask about our packages, booking, or our team.</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <input type="text" placeholder="Ask a question..." required>
+            <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">DIVE</a>
+                    <p>Your gateway to the underwater wonders of the Philippines. Join us for an unforgettable adventure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Trips</h4>
+                    <ul>
+                        <li><a href="packages.html">Cebu Diving</a></li>
+                        <li><a href="packages.html">Palawan Wrecks</a></li>
+                        <li><a href="packages.html">Anilao Macro</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for the latest deals and dive reports.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Dive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-booking-modal">&times;</span>
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you! We've received your request and will contact you shortly with more details.</p>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

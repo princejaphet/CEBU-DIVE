@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dive — Explore the Deep Blue</title>
+
+    <!-- Google Fonts (Poppins, Montserrat, Open Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Swiper.js for Testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header">
+        <nav>
+            <a href="#hero" class="logo">DIVE</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-extra">
+                <a href="booking.html" class="btn btn-primary nav-book-now">Book Now</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="video-background">
+                <!-- Using a placeholder video, replace with your own -->
+                <video autoplay muted loop playsinline poster="images/sea1.jpg">
+                    <source src="https://assets.codepen.io/3364143/sea_-_23913.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1 class="fade-in">Discover the Depths with Dive</h1>
+                <a href="booking.html" class="btn btn-primary fade-in">Book Now</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Our Passion for the Ocean</h2>
+                <p class="section-subtitle">At Dive, our mission is to share the breathtaking beauty of the underwater world while prioritizing safety and ocean conservation. We believe every dive is an opportunity for adventure, discovery, and a deeper connection with nature.</p>
+                <div class="ocean-icons">
+                    <div class="icon-item">
+                        <i class="fas fa-water"></i>
+                        <h3>Conservation</h3>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Safety First</h3>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-compass"></i>
+                        <h3>Adventure</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section id="destinations" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Popular Dive Destinations</h2>
+                <div class="destinations-grid">
+                    <!-- Card 1 -->
+                    <div class="destination-card">
+                        <img src="images/sea2.jpg" alt="Cebu, Philippines">
+                        <div class="card-content">
+                            <h3>Cebu, Philippines</h3>
+                            <p>Experience the famous sardine run and swim with gentle whale sharks.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="cebu">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="destination-card">
+                        <img src="images/sea3.jpg" alt="Palawan, Philippines">
+                        <div class="card-content">
+                            <h3>Palawan, Philippines</h3>
+                            <p>Explore the world-renowned Tubbataha Reefs and historic wreck dives.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="palawan">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="destination-card">
+                        <img src="images/sea4.jpg" alt="Anilao, Philippines">
+                        <div class="card-content">
+                            <h3>Anilao, Philippines</h3>
+                            <p>Discover a macro photographer's paradise with incredible biodiversity.</p>
+                            <a href="#" class="btn btn-secondary view-details-btn" data-destination="anilao">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="packages.html" class="btn btn-secondary">View All Packages</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Underwater Gallery</h2>
+                <div class="gallery-grid">
+                    <img src="images/gallary1.jpg" alt="Diver and turtle" class="gallery-item">
+                    <img src="images/gallary2.jpg" alt="Coral reef" class="gallery-item">
+                    <img src="images/gallary3.jpg" alt="Jellyfish" class="gallery-item">
+                    <img src="images/gallary4.jpg" alt="Scuba diver exploring" class="gallery-item">
+                    <img src="images/gallary5.jpg" alt="Clownfish in anemone" class="gallery-item">
+                    <img src="images/gallary6.jpg" alt="Whale shark" class="gallery-item">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="content-section">
+            <div class="container">
+                <h2 class="section-title">What Our Divers Say</h2>
+                <div class="swiper testimonials-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p>"An unforgettable experience! The team at Dive was professional, safe, and showed us the most incredible dive spots. Highly recommended!"</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h4>- Alex Johnson</h4>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p>"From booking to the final dive, everything was seamless. The instructors are passionate and knowledgeable. I felt completely at ease."</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h4>- Maria Garcia</h4>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p>"I saw my first whale shark thanks to Dive! The trip was well-organized and the crew was fantastic. I'm already planning my next trip."</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <h4>- David Chen</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <form>
+                            <input type="text" name="contact-name" placeholder="Your Name" required>
+                            <input type="email" name="contact-email" placeholder="Your Email" required>
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125988.2348941641!2d123.30193479726561!3d9.956310900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a97c2fca2a1155%3A0x8753149f7863266!2sMoalboal%2C%20Cebu%2C%20Philippines!5e0!3m2!1sen!2sus!4v1672949347515!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                        <p>Panagsama Beach, Moalboal, Cebu, Philippines</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggler">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h2>Dive Assistant</h2>
+            <span class="close-chatbot">&times;</span>
+        </div>
+        <ul class="chat-log">
+            <li class="chat-message bot">
+                <p>Hello! 👋<br>How can I help you today? You can ask about our packages, booking, or our team.</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <input type="text" placeholder="Ask a question..." required>
+            <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#hero" class="logo">DIVE</a>
+                    <p>Your gateway to the underwater wonders of the Philippines. Join us for an unforgettable adventure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Trips</h4>
+                    <ul>
+                        <li><a href="#destinations">Cebu Diving</a></li>
+                        <li><a href="#destinations">Palawan Wrecks</a></li>
+                        <li><a href="#destinations">Anilao Macro</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for the latest deals and dive reports.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Dive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-booking-modal">&times;</span>
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you! We've received your request and will contact you shortly with more details.</p>
+        </div>
+    </div>
+
+    <div id="lightbox-modal" class="modal">
+        <span class="close-button" id="close-lightbox-modal">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Destination Details Modal -->
+    <div id="destination-modal" class="modal">
+        <div class="modal-content destination-modal-content">
+            <span class="close-button" id="close-destination-modal">&times;</span>
+            <img id="destination-modal-img" src="" alt="Destination Image">
+            <h2 id="destination-modal-title"></h2>
+            <p id="destination-modal-description"></p>
+            <a href="booking.html" id="destination-modal-book-btn" class="btn btn-primary">Book This Trip</a>
+        </div>
+    </div>
+
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
